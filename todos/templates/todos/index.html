@@ -1,25 +1,20 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="{% static 'CSS/styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'todos/CSS/styles.css' %}">
     <title>RCL Analytics</title>
-
 </head>
 
-
 <body>
-   
     <header>
 
-        <nav class="nav-bar">
+        <nav class="nav-bar fixed-menu">
             <div class="logo">
-                Logo
+                <img src="{% static 'todos/IMG/RCLAnalytics_LOGO.png' %}" width="250" height="70" alt="">
             </div>
 
             <div class="nav-list">
@@ -32,15 +27,40 @@
                     <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
                 </ul>
             </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="{% static 'todos/IMG/cardapio.png' %}" alt=""></button>
+            </div>
         </nav>
+
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="#" class="nav-link">Sobre Nós</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">O que fazemos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Trabalhe Conosco</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Práticas</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Percepções</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+            </ul>
+        </div>
         
     </header>
-    
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="{% static 'todos/IMG/Slide1.png' %}" alt="Slide 1">
+            <img src="{% static 'todos/IMG/Slide2.jpg' %}" alt="Slide 2">
+            <img src="{% static 'todos/IMG/Slide3.png' %}" alt="Slide 3">
+            <img src="{% static 'todos/IMG/Slide4.png' %}" alt="Slide 4">
+        </div>
+    </div>
+
 </body>
 
 <footer>
 
 </footer>
 
-
+<script src="{% static 'todos/JS/script.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </html>
