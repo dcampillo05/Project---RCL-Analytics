@@ -1,3 +1,39 @@
+const container = document.querySelector(".container");
+const imagens = document.querySelectorAll('.container img');
+const indicatorButtons = document.querySelectorAll('.indicator-button');
+
+let contador = 0;
+
+function slider() {
+    contador++;
+
+    if (contador > imagens.length - 1) {
+        contador = 0;
+    }
+
+    updateSlider();
+}
+
+function gotoSlide(index) {
+    contador = index;
+    updateSlider();
+}
+
+function updateSlider() {
+    container.style.transform = `translateX(${-contador * 100}%)`;
+
+    // Atualiza o estado ativo do botão indicador
+    indicatorButtons.forEach((button, index) => {
+        if (index === contador) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+setInterval(slider, 3000);
+
 function menuShow(){
     let menuMobile = document.querySelector('.mobile-menu');
 
@@ -10,27 +46,5 @@ function menuShow(){
     }
 }
 
-$(document).ready(function(){
-   
-    let currentIndex = 0;
-    const itemWidth = $(' .carousel img').outerWidth();
 
-    $('.carrossel').css('transform', 'translateX(' + (-itemWidth * currentIndex) + 'px)');
 
-    function nextSlide(){
-        if (currentIndex > 3){
-            currentIndex++;
-        }else{
-            currentIndex = 0;
-        }
-        uptadeSlide()
-    }
-
-    function uptadeSlide(){
-        const translateValue = -itemWidth * currentIndex;
-        $('.carrossel').css('transform', 'translateX(' + translateValue + 'px)');
-    }
-
-    setInterval(nextSlide, 3000)
-
-})

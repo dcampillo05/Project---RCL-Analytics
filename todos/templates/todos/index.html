@@ -8,15 +8,13 @@
     <link rel="stylesheet" href="{% static 'todos/CSS/styles.css' %}">
     <title>RCL Analytics</title>
 </head>
-
 <body>
-    <header>
 
+    <header>
         <nav class="nav-bar fixed-menu">
             <div class="logo">
-                <img src="{% static 'todos/IMG/RCLAnalytics_LOGO.png' %}" width="250" height="70" alt="">
+                <img src="{% static 'todos/IMG/RCLAnalytics_LOGO.png' %}" width="250" height="70" alt="RCL Analytics Logo">
             </div>
-
             <div class="nav-list">
                 <ul>
                     <li class="nav-item"><a href="#" class="nav-link">Sobre Nós</a></li>
@@ -27,12 +25,10 @@
                     <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
                 </ul>
             </div>
-
             <div class="mobile-menu-icon">
-                <button onclick="menuShow()"><img class="icon" src="{% static 'todos/IMG/cardapio.png' %}" alt=""></button>
+                <button onclick="menuShow()"><img class="icon" src="{% static 'todos/IMG/cardapio.png' %}" alt="Menu Icon"></button>
             </div>
         </nav>
-
         <div class="mobile-menu">
             <ul>
                 <li class="nav-item"><a href="#" class="nav-link">Sobre Nós</a></li>
@@ -43,24 +39,28 @@
                 <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
             </ul>
         </div>
-        
     </header>
 
-    <div class="carousel-container">
-        <div class="carousel">
-            <img src="{% static 'todos/IMG/Slide1.png' %}" alt="Slide 1">
-            <img src="{% static 'todos/IMG/Slide2.jpg' %}" alt="Slide 2">
-            <img src="{% static 'todos/IMG/Slide3.png' %}" alt="Slide 3">
-            <img src="{% static 'todos/IMG/Slide4.png' %}" alt="Slide 4">
+    <div class="carrosel-container">
+        <div class="carrosel">
+            <div class="container">
+                <img src="{% static 'todos/IMG/Slide1.png' %}" alt="Slide 1">
+                <img src="{% static 'todos/IMG/Slide2.jpg' %}" alt="Slide 2">
+                <img src="{% static 'todos/IMG/Slide3.jpg' %}" alt="Slide 3">
+                <img src="{% static 'todos/IMG/Slide4.png' %}" alt="Slide 4">
+            </div>
+            <div class="indicator-container">
+                <button class="indicator-button" onclick="gotoSlide(0)"></button>
+                <button class="indicator-button" onclick="gotoSlide(1)"></button>
+                <button class="indicator-button" onclick="gotoSlide(2)"></button>
+                <button class="indicator-button" onclick="gotoSlide(3)"></button>
+            </div>
         </div>
     </div>
 
+    <footer></footer>
+
+    <script src="{% static 'todos/JS/script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>
-
-<footer>
-
-</footer>
-
-<script src="{% static 'todos/JS/script.js' %}"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </html>
